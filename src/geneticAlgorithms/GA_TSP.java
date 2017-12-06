@@ -8,7 +8,7 @@ public class GA_TSP {
 	public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
 	public ArrayList<Chromosome> Population = new ArrayList<Chromosome>();
 	
-	
+	//
 	
 }
 
