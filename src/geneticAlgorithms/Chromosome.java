@@ -11,6 +11,7 @@ public class Chromosome {
 	}
 	public Chromosome() {
 		calValue();
+		
 	}
 	private void calValue(){
 		value = 0;
