@@ -1,5 +1,5 @@
 # INFO6205_23
-###Quick look:
+### Quick look: ###
 NEU_COE_INFO 6205 TSP implementing with genetic algorithm
 
 ###Team 23:
@@ -15,5 +15,7 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
 ###Program Structure
 - src
    - GA_TSP.java
-   - Chromosome
+           
+   - Chromosome.java
 - test
+   - test.java
