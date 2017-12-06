@@ -9,6 +9,9 @@ public class Chromosome {
 		this.gene = gene.clone();
 		calValue();
 	}
+	public Chromosome() {
+		calValue();
+	}
 	private void calValue(){
 		value = 0;
 		for (int i = 1;i < CITY_NUMBER; i++){
