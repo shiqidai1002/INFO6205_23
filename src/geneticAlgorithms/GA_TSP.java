@@ -52,7 +52,7 @@ public class GA_TSP {
         return copulation(a,b,sp1,sp2);
     }
 
-    private static Chromosome[] copulation(Chromosome a,Chromosome b, int sp1, int sp2){
+    public static Chromosome[] copulation(Chromosome a,Chromosome b, int sp1, int sp2){
        Chromosome[] decendant = new Chromosome[2];
 
        int[] gene_1 = new int[CITY_NUMBER];        //first son

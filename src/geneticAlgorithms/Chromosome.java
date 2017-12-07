@@ -1,5 +1,6 @@
 package geneticAlgorithms;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Chromosome {
@@ -48,6 +49,13 @@ public class Chromosome {
 		}
 		distance += MAP[gene[CITY_NUMBER-1]][0];
 	}
-	
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Chromosome that = (Chromosome) o;
+		return Arrays.equals(gene, that.gene);
+	}
+
 }
