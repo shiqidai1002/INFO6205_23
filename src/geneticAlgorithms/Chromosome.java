@@ -6,8 +6,8 @@ public class Chromosome {
 
 	public final static int CITY_NUMBER = GA_TSP.CITY_NUMBER;
 	public static int[][] MAP = GA_TSP.MAP;
-	int gene[] ;
-	int distance;
+	public int gene[] ;
+	public int distance;
 	/*
 	Construction
 	Create by an array
