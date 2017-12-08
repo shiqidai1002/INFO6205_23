@@ -26,8 +26,10 @@ public class Chromosome implements Comparable{
     public Chromosome() {
         Random random = new Random();
         gene = new int[CITY_NUMBER];
+        // TODO WENQI: where is gene[0]?
+        //gene[0] = X;
         for (int i = 1; i < CITY_NUMBER; i++) {
-            gene[i] = i;  // TODO WENQI: where is gene[0]?
+            gene[i] = i;
         }
         int j = 0;
         int t = 0;
@@ -49,6 +51,7 @@ public class Chromosome implements Comparable{
         distance = 0;
         for (int i = 1; i < CITY_NUMBER; i++) {
             distance += MAP[gene[i - 1]][gene[i]];
+            //TODO WENQI: the 1st time, MAP[gene[0]][gene[1]], where is gene[0]?
         }
         distance += MAP[gene[CITY_NUMBER - 1]][0]; //TODO WENQI: return to the origin??
     }
