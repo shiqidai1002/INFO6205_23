@@ -19,7 +19,7 @@ public class GA_TSP {
         for (int i = 0; i < CITY_NUMBER; i++) {
             for (int j = 0; j < CITY_NUMBER; j++) {
                 if (i < j) {
-                    MAP[i][j] = (int) (Math.random() * MAX_DISTANCE); //TODO Wenqi: Math.random() can never be 1.0
+                    MAP[i][j] = (int) (Math.random() * MAX_DISTANCE);
                     MAP[j][i] = MAP[i][j];
                 }
             }

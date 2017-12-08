@@ -104,10 +104,10 @@ public void testCopulationForABSp1Sp2() throws Exception {
     Chromosome[] ans = new Chromosome[2];
     ans[0] = new Chromosome(ga);
     ans[1] = new Chromosome(gb);
-    assertEquals(ans[0],GA_TSP.copulation(a,b,7,9)[0]);
-    assertEquals(ans[1],GA_TSP.copulation(a,b,7,9)[1]);
-    assertEquals(ans[1],GA_TSP.copulation(a,b,0,7)[0]);
-    assertEquals(ans[0],GA_TSP.copulation(a,b,0,7)[1]);
+    assertEquals(ans[0],GA_TSP.copulate(a,b,7,9)[0]);
+    assertEquals(ans[1],GA_TSP.copulate(a,b,7,9)[1]);
+    assertEquals(ans[1],GA_TSP.copulate(a,b,0,7)[0]);
+    assertEquals(ans[0],GA_TSP.copulate(a,b,0,7)[1]);
 
 /* 
 try { 
