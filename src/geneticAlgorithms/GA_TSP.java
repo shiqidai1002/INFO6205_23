@@ -1,6 +1,7 @@
 package geneticAlgorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class GA_TSP {
@@ -11,8 +12,9 @@ public class GA_TSP {
 	public static final int MAX_DISTANCE = 30000;
 	public static final double MUTATION_POSSIBILITY = 0.01;
 	public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
-	public static ArrayList<Chromosome> Population = new ArrayList<Chromosome>();
+	public static ArrayList<Chromosome> population = new ArrayList<Chromosome>();
 	public static int age;
+    private static Random random = new Random();
     private static void initialization() {
         //Create a random map
         for (int i = 0; i < CITY_NUMBER; i++){
@@ -26,22 +28,40 @@ public class GA_TSP {
 
         //Create first generation
         for (int i = 0; i < MAX_POPULATION; i++){
-            Population.add(new Chromosome());
+            population.add(new Chromosome());
         }
 
         age = 0;
 
-
     }
 
     private static void reproduction() {
+
+        //Selection
+        int[] order = new int[MAX_POPULATION];
+        for (int i = 0; i < order.length; i++){
+            order[i] = i;
+        }
+        int t = 0;
+        int j = 0;
+        for (int i = MAX_POPULATION - 1; i > 0; i++){
+            j = random.nextInt(i+1);
+            t = order[i];
+            order[i] = order[j];
+            order[j] = t;
+        }
+
+        //Reproduction
+        for (int i = 0; i < MAX_POPULATION - 1; i += 2){
+            population.addAll(Arrays.asList(copulation(population.get(order[i]), population.get(order[i + 1]))));
+        }
 
 
     }
     private static Chromosome[] copulation(Chromosome a,Chromosome b){
 
 
-        Random random = new Random();
+
         int sp1 = random.nextInt(CITY_NUMBER);       //start of chromosome fragment
         int sp2 = random.nextInt(CITY_NUMBER);       //end of chromosome fragment
         if (sp1 > sp2) {
