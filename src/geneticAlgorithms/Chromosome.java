@@ -27,7 +27,7 @@ public class Chromosome implements Comparable{
         Random random = new Random();
         gene = new int[CITY_NUMBER];
         for (int i = 1; i < CITY_NUMBER; i++) {
-            gene[i] = i;
+            gene[i] = i;  // TODO WENQI: where is gene[0]?
         }
         int j = 0;
         int t = 0;
