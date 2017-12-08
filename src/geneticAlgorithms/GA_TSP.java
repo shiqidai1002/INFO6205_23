@@ -110,9 +110,9 @@ public class GA_TSP {
     }
 
 
-    private static boolean theDeath(int percentage) {
+    private static boolean theDeath(double percentage) {
         random = new Random();
-        return random.nextInt(100) < percentage;
+        return random.nextInt(1000) < percentage;
     }
 
     private static void eliminate() {
@@ -120,12 +120,12 @@ public class GA_TSP {
         Collections.sort(population); //ascending order
 
         // remove by chance
-        int deadChance;
+        double deadChance;
         ArrayList<Chromosome> deadList = new ArrayList<Chromosome>();
         while (deadList.size() < 100) {
             for (int i = population.size() - 1; i >= 0; i--) {
                 if (deadList.size() < 100) {
-                    deadChance = i + 1 / population.size() * 100;
+                    deadChance = i + 1 / population.size() * 1000;
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
