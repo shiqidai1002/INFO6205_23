@@ -111,7 +111,7 @@ public class GA_TSP {
 
 
     private static boolean theDeath(double percentage) {
-        random = new Random();
+        percentage *= 1000;
         return random.nextInt(1000) < percentage;
     }
 
@@ -125,7 +125,7 @@ public class GA_TSP {
         while (deadList.size() < 100) {
             for (int i = population.size() - 1; i >= 0; i--) {
                 if (deadList.size() < 100) {
-                    deadChance = i + 1 / population.size() * 1000;
+                    deadChance = i + 1 / population.size();
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
