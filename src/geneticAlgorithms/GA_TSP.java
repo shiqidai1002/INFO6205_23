@@ -109,11 +109,6 @@ public class GA_TSP {
         return descendant;
     }
 
-    private static int calWorstDistance() {
-        int worstDistance = 0;
-        //TODO
-        return worstDistance;
-    }
 
     private static boolean theDeath(int percentage) {
         random = new Random();
@@ -130,7 +125,7 @@ public class GA_TSP {
         while (deadList.size() < 100) {
             for (int i = population.size() - 1; i >= 0; i--) {
                 if (deadList.size() < 100) {
-                    deadChance = population.get(i).distance / calWorstDistance() * 100;
+                    deadChance = i + 1 / population.size() * 100;
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
