@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Chromosome implements Comparable{
 
-    public final static int CITY_NUMBER = GA_TSP.CITY_NUMBER;
+    public static final int CITY_NUMBER = GA_TSP.CITY_NUMBER;
     public static int[][] MAP = GA_TSP.MAP;
     public int gene[];
     public int distance;
@@ -73,5 +73,21 @@ public class Chromosome implements Comparable{
                 "gene=" + Arrays.toString(gene) +
                 ", distance=" + distance +
                 '}';
+    }
+
+    /*
+    Mutation:
+      Select two random city, change visiting order.
+     */
+    public void mutation() {
+        Random random = new Random();
+        int i = random.nextInt(CITY_NUMBER - 1) + 1;
+        int k = random.nextInt(CITY_NUMBER - 1) + 1;
+        while (k == i) k = random.nextInt(CITY_NUMBER - 1) + 1;
+        int t = gene[i];
+        gene[i] = gene[k];
+        gene[k] = t;
+
+        calDistance();
     }
 }

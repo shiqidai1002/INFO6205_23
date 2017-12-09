@@ -68,7 +68,11 @@ public class GA_TSP {
             sp1 = sp2;
             sp2 = t;
         }
-        return copulate(a, b, sp1, sp2);
+        Chromosome[] descendant = copulate(a, b, sp1, sp2);
+        for (Chromosome d : descendant){
+            if (Math.random() < MUTATION_POSSIBILITY) d.mutation();
+        }
+        return descendant;
     }
 
     public static Chromosome[] copulate(Chromosome a, Chromosome b, int sp1, int sp2) {
@@ -100,28 +104,6 @@ public class GA_TSP {
             hash_2[a.gene[ka]] = true;
 
         }
-
-        //Mutation
-//        int k;
-//        int t;
-//        for (int i = 1; i < CITY_NUMBER; i++){
-//            if (Math.random() < MUTATION_POSSIBILITY){
-//                k = random.nextInt(CITY_NUMBER-1)+1;
-//                while (k == i) k = random.nextInt(CITY_NUMBER-1)+1;
-//                t = gene_1[i];
-//                gene_1[i] = gene_1[k];
-//                gene_1[k] = t;
-//            }
-//        }
-//        for (int i = 1; i < CITY_NUMBER; i++){
-//            if (Math.random() < MUTATION_POSSIBILITY){
-//                k = random.nextInt(CITY_NUMBER-1)+1;
-//                while (k == i) k = random.nextInt(CITY_NUMBER-1)+1;
-//                t = gene_1[i];
-//                gene_2[i] = gene_2[k];
-//                gene_2[k] = t;
-//            }
-//        }
 
         //return
         descendant[0] = new Chromosome(gene_1);
@@ -166,11 +148,12 @@ public class GA_TSP {
             reproduce();
             eliminate();
             age++;
+            System.out.println(population.get(0).toString());
         }
-        System.out.println(population.get(0).toString());
-        for (int i = 1; i < 100; i++){
-            System.out.println(population.get(i).toString());
-        }
+
+//        for (int i = 1; i < 100; i++){
+//            System.out.println(population.get(i).toString());
+//        }
     }
 
 }
