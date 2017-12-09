@@ -127,7 +127,7 @@ public class GA_TSP {
         while (deadList.size() < 100) {
             for (int i = population.size() - 1; i >= 0; i--) {
                 if (deadList.size() < 100) {
-                    deadChance = (i + 1) / population.size();
+                    deadChance = (i + 1.0) / population.size();
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
