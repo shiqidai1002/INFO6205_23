@@ -70,8 +70,8 @@ public class Chromosome implements Comparable{
     @Override
     public String toString() {
         return "Chromosome{" +
-                "gene=" + Arrays.toString(gene) +
-                ", distance=" + distance +
+                "distance=" + distance +
+                ", gene=" + Arrays.toString(gene) +
                 '}';
     }
 

@@ -4,9 +4,9 @@ import java.util.*;
 
 public class GA_TSP {
     public static boolean RANDOM_MAP = true;
-    public static final int CITY_NUMBER = 10;
-    public static final int MAX_GENERATION = 100;
-    public static final int MAX_POPULATION = 100;
+    public static final int CITY_NUMBER = 50;
+    public static final int MAX_GENERATION = 150;
+    public static final int MAX_POPULATION = 500;
     public static final int MAX_DISTANCE = 30000;
     public static final double MUTATION_POSSIBILITY = 0.01;
     public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
