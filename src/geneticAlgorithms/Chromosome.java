@@ -6,7 +6,7 @@ import java.util.Random;
 public class Chromosome implements Comparable{
 
     public static final int CITY_NUMBER = GA_TSP.CITY_NUMBER;
-    public static int[][] MAP = GA_TSP.MAP;
+    public static int[][] MAP;
     public int gene[];
     public int distance;
 
@@ -23,7 +23,8 @@ public class Chromosome implements Comparable{
     Construction
     Create by random
      */
-    public Chromosome() {
+    public Chromosome(int[][] map) {
+        MAP = map;
         Random random = new Random();
         gene = new int[CITY_NUMBER];
         for (int i = 1; i < CITY_NUMBER; i++) {

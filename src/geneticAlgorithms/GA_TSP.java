@@ -3,38 +3,42 @@ package geneticAlgorithms;
 import java.util.*;
 
 public class GA_TSP {
-    public static boolean RANDOM_MAP = true;
-    public static final int CITY_NUMBER = 20;
-    public static final int MAX_GENERATION = 80;
-    public static final int MAX_POPULATION = 500;
     public static final int MAX_DISTANCE = 30000;
-    public static final double MUTATION_POSSIBILITY = 0.1;
-    public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
-    public static ArrayList<Chromosome> population = new ArrayList<Chromosome>();
-    public static int age;
+    public static boolean DEFAULT = true;
+
+    public static int CITY_NUMBER = 20;
+    public static int MAX_GENERATION = 100;
+    public static int MAX_POPULATION = 100;
+    public static double MUTATION_POSSIBILITY = 0.1;
+
+    public int[][] map = new int[CITY_NUMBER][CITY_NUMBER];
+    public ArrayList<Chromosome> population = new ArrayList<Chromosome>();
+    public int age;
     private static Random random = new Random();
 
-    private static void initialize() {
+    private void getRandomMap(int CITY_NUMBER){
+        map = new int[CITY_NUMBER][CITY_NUMBER];
+
         //Create a random map
         for (int i = 0; i < CITY_NUMBER; i++) {
             for (int j = 0; j < CITY_NUMBER; j++) {
                 if (i < j) {
-                    MAP[i][j] = (int) (Math.random() * MAX_DISTANCE);
-                    MAP[j][i] = MAP[i][j];
+                    map[i][j] = (int) (Math.random() * MAX_DISTANCE);
+                    map[j][i] = map[i][j];
                 }
             }
         }
-
+    }
+    private void initialize() {
         //Create first generation
         for (int i = 0; i < MAX_POPULATION; i++) {
-            population.add(new Chromosome());
+            population.add(new Chromosome(map));
         }
 
         age = 0;
-
     }
 
-    private static void reproduce() {
+    private void reproduce() {
 
         //Selection
         int[] order = new int[MAX_POPULATION];
@@ -117,7 +121,7 @@ public class GA_TSP {
         return random.nextInt(1000) < percentage;
     }
 
-    private static void eliminate() {
+    private void eliminate() {
         // sorting
         Collections.sort(population); //ascending order
 
@@ -143,19 +147,59 @@ public class GA_TSP {
             }
         }
     }
+    /*
+    Constructor
+
+    Default parameter ,random map
+     */
+    public GA_TSP() {
+        getRandomMap(CITY_NUMBER);
+        initialize();
+    }
+
+    /*
+    Constructor
+
+    Given parameter ,random map
+     */
+    public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo){
+        CITY_NUMBER = cityNumber;
+        MAX_POPULATION = maxPo;
+        MAX_GENERATION = maxGe;
+        MUTATION_POSSIBILITY = mutationPo;
+        getRandomMap(CITY_NUMBER);
+        initialize();
+    }
+    /*
+    Constructor
+
+    Given parameter ,given map
+    */
+    public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo,int[][] map){
+        CITY_NUMBER = cityNumber;
+        MAX_POPULATION = maxPo;
+        MAX_GENERATION = maxGe;
+        MUTATION_POSSIBILITY = mutationPo;
+        this.map = map.clone();
+        initialize();
+    }
 
 
     public static void main(String[] args) {
-        initialize();
-        for (int i = 0; i < MAX_GENERATION; i++) {
-            reproduce();
-            eliminate();
-            age++;
-            //System.out.println(population.get(0).distance + "population size=" + population.size());
-        }
-        System.out.println("Last generation : ");
-        for (int i = 1; i < MAX_POPULATION; i++){
-            System.out.println(population.get(i).toString());
+        if (DEFAULT) {
+            GA_TSP ga = new GA_TSP();
+            for (int i = 0; i < MAX_GENERATION; i++) {
+                ga.reproduce();
+                ga.eliminate();
+                ga.age++;
+                System.out.println("distance : " + ga.population.get(0).distance
+                        + "\tpopulation size=" + ga.population.size());
+            }
+
+//        System.out.println("Last generation : ");
+//        for (int i = 1; i < MAX_POPULATION; i++){
+//            System.out.println(ga.population.get(i).toString());
+//        }
         }
     }
 }
