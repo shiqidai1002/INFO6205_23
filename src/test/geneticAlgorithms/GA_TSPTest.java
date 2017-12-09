@@ -8,10 +8,12 @@ import org.junit.After;
 
 import static junit.framework.TestCase.*;
 
-public class GA_TSPTest { 
-
+public class GA_TSPTest {
+    GA_TSP ga_tsp;
 @Before
-public void before() throws Exception { 
+
+public void before() throws Exception {
+    ga_tsp = new GA_TSP();
 } 
 
 @After
@@ -36,7 +38,8 @@ public void testMain() throws Exception {
 */ 
 @Test
 public void testInitialization() throws Exception { 
-//TODO: Test goes here... 
+
+    assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION);
 /* 
 try { 
    Method method = GA_TSP.getClass().getMethod("initialization"); 
@@ -56,7 +59,9 @@ try {
 */ 
 @Test
 public void testReproduction() throws Exception { 
-//TODO: Test goes here... 
+
+    ga_tsp.reproduce();
+    assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION * 2);
 /* 
 try { 
    Method method = GA_TSP.getClass().getMethod("reproduction"); 
@@ -96,9 +101,8 @@ try {
 */ 
 @Test
 public void testCopulationForABSp1Sp2() throws Exception { 
-//TODO: Test goes here...
-    int[] ga = {0,1,2,3,4,5,6,7,8,9};
-    int[] gb = {0,1,2,3,4,5,6,7,9,8};
+    int[] ga = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+    int[] gb = {0,1,2,3,4,5,6,7,9,8,10,11,12,13,14,15,16,17,18,19};
     Chromosome a = new Chromosome(ga);
     Chromosome b = new Chromosome(gb);
     Chromosome[] ans = new Chromosome[2];
@@ -128,7 +132,10 @@ try {
 */ 
 @Test
 public void testElimination() throws Exception { 
-//TODO: Test goes here... 
+
+    ga_tsp.reproduce();
+    ga_tsp.eliminate();
+    assertEquals(ga_tsp.population.size(),GA_TSP.MAX_POPULATION);
 /* 
 try { 
    Method method = GA_TSP.getClass().getMethod("elimination"); 

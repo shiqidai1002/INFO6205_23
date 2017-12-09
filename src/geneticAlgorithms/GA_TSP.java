@@ -8,7 +8,7 @@ public class GA_TSP {
 
     public static int CITY_NUMBER = 20;
     public static int MAX_GENERATION = 100;
-    public static int MAX_POPULATION = 100;
+    public static int MAX_POPULATION = 400;
     public static double MUTATION_POSSIBILITY = 0.1;
 
     public int[][] map = new int[CITY_NUMBER][CITY_NUMBER];
@@ -38,7 +38,7 @@ public class GA_TSP {
         age = 0;
     }
 
-    private void reproduce() {
+    public void reproduce() {
 
         //Selection
         int[] order = new int[MAX_POPULATION];
@@ -121,7 +121,7 @@ public class GA_TSP {
         return random.nextInt(1000) < percentage;
     }
 
-    private void eliminate() {
+    public void eliminate() {
         // sorting
         Collections.sort(population); //ascending order
 
@@ -150,7 +150,7 @@ public class GA_TSP {
     /*
     Constructor
 
-    Default parameter ,random map
+    Default parameter, random map
      */
     public GA_TSP() {
         getRandomMap(CITY_NUMBER);
@@ -160,7 +160,7 @@ public class GA_TSP {
     /*
     Constructor
 
-    Given parameter ,random map
+    Given parameter, random map
      */
     public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo){
         CITY_NUMBER = cityNumber;
@@ -173,7 +173,7 @@ public class GA_TSP {
     /*
     Constructor
 
-    Given parameter ,given map
+    Given parameter, given map
     */
     public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo,int[][] map){
         CITY_NUMBER = cityNumber;
