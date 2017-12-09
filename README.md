@@ -19,3 +19,4 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
    - Chromosome.java
 - test
    - GA_TSPTest.java
+   - ChromosomeTest.java
