@@ -83,9 +83,9 @@ public class ChromosomeTest {
         Chromosome cm = new Chromosome(gene);
         int currentDistance = 0;
         for (int i = 1; i < cm.CITY_NUMBER; i++) {
-            currentDistance += cm.MAP[i - 1][i];
+            currentDistance += cm.MAP[cm.gene[i - 1]][cm.gene[i]];
         }
-        currentDistance += cm.MAP[cm.CITY_NUMBER - 1][0];
+        currentDistance += cm.MAP[cm.gene[cm.CITY_NUMBER - 1]][0];
         assertEquals(currentDistance, cm.distance);
 /* 
 try { 
