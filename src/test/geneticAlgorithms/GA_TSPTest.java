@@ -42,7 +42,7 @@ public void testInitialize() throws Exception {
     assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION);
 /* 
 try { 
-   Method method = GA_TSP.getClass().getMethod("initialization"); 
+   Method method = GA_TSP.getClass().getMethod("initialize");
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
@@ -64,7 +64,7 @@ public void testReproduce() throws Exception {
     assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION * 2);
 /* 
 try { 
-   Method method = GA_TSP.getClass().getMethod("reproduction"); 
+   Method method = GA_TSP.getClass().getMethod("reproduce");
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
@@ -84,7 +84,7 @@ public void testCopulateForAB() throws Exception {
 //TODO: Test goes here... 
 /* 
 try { 
-   Method method = GA_TSP.getClass().getMethod("copulation", Chromosome.class, Chromosome.class); 
+   Method method = GA_TSP.getClass().getMethod("copulate", Chromosome.class, Chromosome.class);
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
@@ -115,7 +115,7 @@ public void testCopulateForABSp1Sp2() throws Exception {
 
 /* 
 try { 
-   Method method = GA_TSP.getClass().getMethod("copulation", Chromosome.class, Chromosome.class, int.class, int.class); 
+   Method method = GA_TSP.getClass().getMethod("copulate", Chromosome.class, Chromosome.class, int.class, int.class);
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
@@ -143,7 +143,7 @@ public void testEliminate() throws Exception {
     }
 /* 
 try { 
-   Method method = GA_TSP.getClass().getMethod("elimination"); 
+   Method method = GA_TSP.getClass().getMethod("eliminate");
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
@@ -151,6 +151,8 @@ try {
 } catch(InvocationTargetException e) { 
 } 
 */ 
-} 
+}
+
+
 
 } 

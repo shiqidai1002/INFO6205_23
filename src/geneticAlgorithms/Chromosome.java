@@ -30,8 +30,8 @@ public class Chromosome implements Comparable{
         for (int i = 1; i < CITY_NUMBER; i++) {
             gene[i] = i;
         }
-        int j = 0;
-        int t = 0;
+        int j;
+        int t;
         for (int i = CITY_NUMBER - 1; i > 0; i--) {
             j = random.nextInt(i) + 1;
             t = gene[i];
@@ -78,7 +78,7 @@ public class Chromosome implements Comparable{
 
     /*
         Mutation:
-          Select two random city, change visiting order.
+          Select two random city and change visiting order.
          */
     public void mutation() {
         Random random = new Random();
