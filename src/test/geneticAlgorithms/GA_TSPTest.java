@@ -136,6 +136,11 @@ public void testEliminate() throws Exception {
     ga_tsp.reproduce();
     ga_tsp.eliminate();
     assertEquals(ga_tsp.population.size(),GA_TSP.MAX_POPULATION);
+    for (int i = 0; i < GA_TSP.MAX_GENERATION; i++){
+        ga_tsp.reproduce();
+        ga_tsp.eliminate();
+        assertEquals(ga_tsp.population.size(),GA_TSP.MAX_POPULATION);
+    }
 /* 
 try { 
    Method method = GA_TSP.getClass().getMethod("elimination"); 
