@@ -3,7 +3,7 @@ package geneticAlgorithms;
 import java.util.*;
 
 public class GA_TSP {
-
+    public static boolean RANDOM_MAP = true;
     public static final int CITY_NUMBER = 10;
     public static final int MAX_GENERATION = 100;
     public static final int MAX_POPULATION = 100;
@@ -43,7 +43,7 @@ public class GA_TSP {
         }
         int t = 0;
         int j = 0;
-        for (int i = MAX_POPULATION - 1; i > 0; i++) {
+        for (int i = MAX_POPULATION - 1; i > 0; i--) {
             j = random.nextInt(i + 1);
             t = order[i];
             order[i] = order[j];
@@ -102,6 +102,26 @@ public class GA_TSP {
         }
 
         //Mutation
+//        int k;
+//        int t;
+//        for (int i = 1; i < CITY_NUMBER; i++){
+//            if (Math.random() < MUTATION_POSSIBILITY){
+//                k = random.nextInt(CITY_NUMBER-1)+1;
+//                while (k == i) k = random.nextInt(CITY_NUMBER-1)+1;
+//                t = gene_1[i];
+//                gene_1[i] = gene_1[k];
+//                gene_1[k] = t;
+//            }
+//        }
+//        for (int i = 1; i < CITY_NUMBER; i++){
+//            if (Math.random() < MUTATION_POSSIBILITY){
+//                k = random.nextInt(CITY_NUMBER-1)+1;
+//                while (k == i) k = random.nextInt(CITY_NUMBER-1)+1;
+//                t = gene_1[i];
+//                gene_2[i] = gene_2[k];
+//                gene_2[k] = t;
+//            }
+//        }
 
         //return
         descendant[0] = new Chromosome(gene_1);
@@ -140,16 +160,17 @@ public class GA_TSP {
     }
 
 
-    public static void main() {
+    public static void main(String[] args) {
         initialize();
         for (int i = 0; i < MAX_GENERATION; i++) {
             reproduce();
             eliminate();
             age++;
         }
+        System.out.println(population.get(0).toString());
+        for (int i = 1; i < 100; i++){
+            System.out.println(population.get(i).toString());
+        }
     }
-
-
-    //
 
 }

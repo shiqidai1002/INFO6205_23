@@ -66,4 +66,12 @@ public class Chromosome implements Comparable{
         Chromosome that = (Chromosome) o;
         return this.distance - that.distance;
     }
+
+    @Override
+    public String toString() {
+        return "Chromosome{" +
+                "gene=" + Arrays.toString(gene) +
+                ", distance=" + distance +
+                '}';
+    }
 }
