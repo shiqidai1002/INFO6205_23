@@ -69,7 +69,7 @@ public class GA_TSP {
             sp2 = t;
         }
         Chromosome[] descendant = copulate(a, b, sp1, sp2);
-        for (Chromosome d : descendant){
+        for (Chromosome d : descendant) {
             if (Math.random() < MUTATION_POSSIBILITY) d.mutation();
         }
         return descendant;
@@ -127,7 +127,7 @@ public class GA_TSP {
         while (deadList.size() < 100) {
             for (int i = population.size() - 1; i >= 0; i--) {
                 if (deadList.size() < 100) {
-                    deadChance = i + 1 / population.size();
+                    deadChance = (i + 1) / population.size();
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
