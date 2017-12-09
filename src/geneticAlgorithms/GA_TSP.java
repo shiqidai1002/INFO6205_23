@@ -5,8 +5,8 @@ import java.util.*;
 public class GA_TSP {
     public static boolean RANDOM_MAP = true;
     public static final int CITY_NUMBER = 20;
-    public static final int MAX_GENERATION = 150;
-    public static final int MAX_POPULATION = 150;
+    public static final int MAX_GENERATION = 500;
+    public static final int MAX_POPULATION = 200;
     public static final int MAX_DISTANCE = 30000;
     public static final double MUTATION_POSSIBILITY = 0.01;
     public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
@@ -123,22 +123,24 @@ public class GA_TSP {
 
         // remove by chance
         double deadChance;
-        ArrayList<Chromosome> deadList = new ArrayList<Chromosome>();
-        while (deadList.size() < MAX_POPULATION) {
+        double deadmen = 0;
+        while (deadmen < MAX_POPULATION) {
+            ArrayList<Chromosome> deadList = new ArrayList<Chromosome>();
             for (int i = population.size() - 1; i >= 0; i--) {
-                if (deadList.size() < MAX_POPULATION) {
+                if (deadmen < MAX_POPULATION) {
                     deadChance = (i + 1.0) / population.size();
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
+                        deadmen++;
                     }
                 } else {
                     break;
                 }
             }
+            //System.out.println("deadList number: " + deadList.size());
             for (Chromosome dying : deadList) {
                 population.remove(dying);
             }
-            System.out.println("deadList remaining" + deadList.size());
         }
     }
 
