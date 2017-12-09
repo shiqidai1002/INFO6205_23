@@ -33,11 +33,11 @@ public void testMain() throws Exception {
 
 /** 
 * 
-* Method: initialization() 
+* Method: initialize()
 * 
 */ 
 @Test
-public void testInitialization() throws Exception { 
+public void testInitialize() throws Exception {
 
     assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION);
 /* 
@@ -54,11 +54,11 @@ try {
 
 /** 
 * 
-* Method: reproduction() 
+* Method: reproduce()
 * 
 */ 
 @Test
-public void testReproduction() throws Exception { 
+public void testReproduce() throws Exception {
 
     ga_tsp.reproduce();
     assertEquals(ga_tsp.population.size(), GA_TSP.MAX_POPULATION * 2);
@@ -76,11 +76,11 @@ try {
 
 /** 
 * 
-* Method: copulation(Chromosome a, Chromosome b) 
+* Method: copulate(Chromosome a, Chromosome b)
 * 
 */ 
 @Test
-public void testCopulationForAB() throws Exception { 
+public void testCopulateForAB() throws Exception {
 //TODO: Test goes here... 
 /* 
 try { 
@@ -96,11 +96,11 @@ try {
 
 /** 
 * 
-* Method: copulation(Chromosome a, Chromosome b, int sp1, int sp2) 
+* Method: copulate(Chromosome a, Chromosome b, int sp1, int sp2)
 * 
 */ 
 @Test
-public void testCopulationForABSp1Sp2() throws Exception { 
+public void testCopulateForABSp1Sp2() throws Exception {
     int[] ga = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
     int[] gb = {0,1,2,3,4,5,6,7,9,8,10,11,12,13,14,15,16,17,18,19};
     Chromosome a = new Chromosome(ga);
@@ -127,11 +127,11 @@ try {
 
 /** 
 * 
-* Method: elimination() 
+* Method: eliminate()
 * 
 */ 
 @Test
-public void testElimination() throws Exception { 
+public void testEliminate() throws Exception {
 
     ga_tsp.reproduce();
     ga_tsp.eliminate();
