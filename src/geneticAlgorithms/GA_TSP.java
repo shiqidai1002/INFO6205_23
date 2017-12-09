@@ -4,9 +4,9 @@ import java.util.*;
 
 public class GA_TSP {
     public static boolean RANDOM_MAP = true;
-    public static final int CITY_NUMBER = 50;
+    public static final int CITY_NUMBER = 20;
     public static final int MAX_GENERATION = 150;
-    public static final int MAX_POPULATION = 500;
+    public static final int MAX_POPULATION = 150;
     public static final int MAX_DISTANCE = 30000;
     public static final double MUTATION_POSSIBILITY = 0.01;
     public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
@@ -124,10 +124,10 @@ public class GA_TSP {
         // remove by chance
         double deadChance;
         ArrayList<Chromosome> deadList = new ArrayList<Chromosome>();
-        while (deadList.size() < 100) {
+        while (deadList.size() < MAX_POPULATION) {
             for (int i = population.size() - 1; i >= 0; i--) {
-                if (deadList.size() < 100) {
-                    deadChance = (i + 1) / population.size();
+                if (deadList.size() < MAX_POPULATION) {
+                    deadChance = (i + 1.0) / population.size();
                     if (theDeath(deadChance)) {
                         deadList.add(population.get(i));
                     }
@@ -138,6 +138,7 @@ public class GA_TSP {
             for (Chromosome dying : deadList) {
                 population.remove(dying);
             }
+            System.out.println("deadList remaining" + deadList.size());
         }
     }
 
@@ -148,7 +149,8 @@ public class GA_TSP {
             reproduce();
             eliminate();
             age++;
-            System.out.println(population.get(0).toString());
+            System.out.println(population.get(0).toString() + "population size=" + population.size());
+
         }
 
 //        for (int i = 1; i < 100; i++){

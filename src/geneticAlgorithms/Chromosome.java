@@ -71,7 +71,7 @@ public class Chromosome implements Comparable{
     public String toString() {
         return "Chromosome{" +
                 "distance=" + distance +
-                ", gene=" + Arrays.toString(gene) +
+//                ", gene=" + Arrays.toString(gene) +
                 '}';
     }
 
