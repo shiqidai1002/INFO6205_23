@@ -70,15 +70,15 @@ public class Chromosome implements Comparable{
     @Override
     public String toString() {
         return "Chromosome{" +
-                "distance=" + distance +
-//                ", gene=" + Arrays.toString(gene) +
+                "gene=" + Arrays.toString(gene) +
+                ", distance=" + distance +
                 '}';
     }
 
     /*
-    Mutation:
-      Select two random city, change visiting order.
-     */
+        Mutation:
+          Select two random city, change visiting order.
+         */
     public void mutation() {
         Random random = new Random();
         int i = random.nextInt(CITY_NUMBER - 1) + 1;

@@ -5,10 +5,10 @@ import java.util.*;
 public class GA_TSP {
     public static boolean RANDOM_MAP = true;
     public static final int CITY_NUMBER = 20;
-    public static final int MAX_GENERATION = 500;
-    public static final int MAX_POPULATION = 200;
+    public static final int MAX_GENERATION = 80;
+    public static final int MAX_POPULATION = 500;
     public static final int MAX_DISTANCE = 30000;
-    public static final double MUTATION_POSSIBILITY = 0.01;
+    public static final double MUTATION_POSSIBILITY = 0.1;
     public static int[][] MAP = new int[CITY_NUMBER][CITY_NUMBER];
     public static ArrayList<Chromosome> population = new ArrayList<Chromosome>();
     public static int age;
@@ -151,13 +151,11 @@ public class GA_TSP {
             reproduce();
             eliminate();
             age++;
-            System.out.println(population.get(0).toString() + "population size=" + population.size());
-
+            //System.out.println(population.get(0).distance + "population size=" + population.size());
         }
-
-//        for (int i = 1; i < 100; i++){
-//            System.out.println(population.get(i).toString());
-//        }
+        System.out.println("Last generation : ");
+        for (int i = 1; i < MAX_POPULATION; i++){
+            System.out.println(population.get(i).toString());
+        }
     }
-
 }
