@@ -52,3 +52,6 @@ A user can also customize their own codintion by using the other two constructor
 `GA_TSP(int cityNumber, int maxGe, int maxPo, double mutationPo)`  
 - given parameters, given map  
 `GA_TSP(int cityNumber, int maxGe, int maxPo, double mutationPo, int[][] map)`
+
+**Output**
+
