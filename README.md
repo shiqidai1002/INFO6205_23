@@ -62,7 +62,7 @@ A user can also customize their own codintion by using the other two constructor
    3. loop to generate, for each:
         - `reproduce()`
             - randomize `int[] order`
-            - `copulate()` 2 by 2
+            - `copulate()` each 2 individuals
                 - `mutation()` happened by `MUTATION_POSSIBILITY`
             - finally got 2x `MAX_POPULATION`
         - `eliminate()` 
