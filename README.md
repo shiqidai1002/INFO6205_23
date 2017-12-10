@@ -20,7 +20,8 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
    - GA_TSPTest.java
    - ChromosomeTest.java
 
-
+![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/GA_TSP_structure.png)
+![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/Chromosome_structure.png)
 
 ### User guide ###
 default setting
