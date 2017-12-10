@@ -110,8 +110,8 @@ A user can also customize their own codintion by using the other two constructor
 
 **Unit Test**
 
-![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/GA_TSPTest.png)
-![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/ChromosomeTest.png)
+![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/GA_TSPTest.jpg)
+![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/ChromosomeTest.jpg)
 
 **Output**
 
