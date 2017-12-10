@@ -30,6 +30,41 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
 
 ![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/Chromosome_structure.png)
 
+### Design of Chromosome ###
+
+**Field**  
+
+`public static final int CITY_NUMBER = GA_TSP.CITY_NUMBER;`    
+`public static int[][] MAP;`   
+`public int gene[];`    
+`public int distance;`  
+
+**Design of gene**
+
+- Gene is an int array whose length is equal to `CITY_NUMBER`.  
+    - `gene = new int[CITY_NUMBER];`
+    
+- Each index stores an int which represents a city
+
+- Index from 0 to `CITY_NUMBER - 1`, representing the order of salesman's visiting.
+
+- The value of every gene's first index is 0, which means the salesman starts from city 0.  
+    - It is represented as: 
+     
+        > for (int **i = 1**; i < CITY_NUMBER; i++) {  
+        gene[i] = i;  
+         }
+          
+        i starts from 1, thus index 0 will automatically be 0.
+
+**Gene expression**
+
+The gene of each chromosome is expressed by the distance.  
+
+`calDistance()` will sum up all the distances between every neighbor indices. Then add the distance between the last index and 0, which means the salesman returns to the origin.
+
+By the way, the distance is used as key when chromosome is compared.
+
 ### User guide ###
 
 **Default Settings**  
