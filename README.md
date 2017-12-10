@@ -76,3 +76,25 @@ A user can also customize their own codintion by using the other two constructor
 
 **Output**
 
+The shortest distance of each generation will be printed onto console.  
+The printed current population is to help user to make sure the stability of the population.
+
+Output is like this below:
+
+    Generation #1:  Shortest distance= 149606  current population size=400
+    Generation #2:  Shortest distance= 149606  current population size=400
+    Generation #3:  Shortest distance= 149606  current population size=400
+    Generation #4:  Shortest distance= 149606  current population size=400
+    Generation #5:  Shortest distance= 149606  current population size=400
+    .
+    .
+    .
+    Generation #96:  Shortest distance= 48693  current population size=400
+    Generation #97:  Shortest distance= 48693  current population size=400
+    Generation #98:  Shortest distance= 48693  current population size=400
+    Generation #99:  Shortest distance= 48693  current population size=400
+    Generation #100: Shortest distance= 48693  current population size=400
+    
+**Others**
+
+ > Under editing...
