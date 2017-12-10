@@ -16,7 +16,7 @@ public class GA_TSP {
     public int age;
     private static Random random = new Random();
 
-    private void getRandomMap(int CITY_NUMBER){
+    private void getRandomMap(int CITY_NUMBER) {
         map = new int[CITY_NUMBER][CITY_NUMBER];
 
         //Create a random map
@@ -29,6 +29,7 @@ public class GA_TSP {
             }
         }
     }
+
     private void initialize() {
         //Create first generation
         for (int i = 0; i < MAX_POPULATION; i++) {
@@ -147,6 +148,7 @@ public class GA_TSP {
             }
         }
     }
+
     /*
     Constructor
 
@@ -162,7 +164,7 @@ public class GA_TSP {
 
     Given parameter, random map
      */
-    public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo){
+    public GA_TSP(int cityNumber, int maxGe, int maxPo, double mutationPo) {
         CITY_NUMBER = cityNumber;
         MAX_POPULATION = maxPo;
         MAX_GENERATION = maxGe;
@@ -170,12 +172,13 @@ public class GA_TSP {
         getRandomMap(CITY_NUMBER);
         initialize();
     }
+
     /*
     Constructor
 
     Given parameter, given map
     */
-    public GA_TSP(int cityNumber, int maxGe,int maxPo,double mutationPo,int[][] map){
+    public GA_TSP(int cityNumber, int maxGe, int maxPo, double mutationPo, int[][] map) {
         CITY_NUMBER = cityNumber;
         MAX_POPULATION = maxPo;
         MAX_GENERATION = maxGe;
@@ -192,14 +195,10 @@ public class GA_TSP {
                 ga.reproduce();
                 ga.eliminate();
                 ga.age++;
-                System.out.println("distance : " + ga.population.get(0).distance
-                        + "\tpopulation size=" + ga.population.size());
+                System.out.println("Generation #" + (i + 1) + ":\tShortest distance= " + ga.population.get(0).distance
+                        + "\tcurrent population size=" + ga.population.size());
             }
 
-//        System.out.println("Last generation : ");
-//        for (int i = 1; i < MAX_POPULATION; i++){
-//            System.out.println(ga.population.get(i).toString());
-//        }
         }
     }
 }
