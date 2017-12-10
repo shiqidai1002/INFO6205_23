@@ -53,5 +53,26 @@ A user can also customize their own codintion by using the other two constructor
 - given parameters, given map  
 `GA_TSP(int cityNumber, int maxGe, int maxPo, double mutationPo, int[][] map)`
 
+**How it works**
+
+   1. set a map 
+        - random / given  
+   2. `initialize()`
+        - based on map generate the 1st generation of population
+   3. loop to generate, for each:
+        - `reproduce()`
+            - randomize `int[] order`
+            - `copulate()` 2 by 2
+                - `mutation()` happened by `MUTATION_POSSIBILITY`
+            - finally got 2x `MAX_POPULATION`
+        - `eliminate()` 
+            - sort: according to ascending order
+                - `Collections.sort(population);`
+            - cull by chance
+                - the closer to the end of sorting, the more likely to deadth 
+  
+
+
+
 **Output**
 
