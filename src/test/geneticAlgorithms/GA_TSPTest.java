@@ -20,16 +20,6 @@ public void before() throws Exception {
 public void after() throws Exception { 
 } 
 
-/** 
-* 
-* Method: main() 
-* 
-*/ 
-@Test
-public void testMain() throws Exception { 
-//TODO: Test goes here... 
-} 
-
 
 /** 
 * 
@@ -65,26 +55,6 @@ public void testReproduce() throws Exception {
 /* 
 try { 
    Method method = GA_TSP.getClass().getMethod("reproduce");
-   method.setAccessible(true); 
-   method.invoke(<Object>, <Parameters>); 
-} catch(NoSuchMethodException e) { 
-} catch(IllegalAccessException e) { 
-} catch(InvocationTargetException e) { 
-} 
-*/ 
-} 
-
-/** 
-* 
-* Method: copulate(Chromosome a, Chromosome b)
-* 
-*/ 
-@Test
-public void testCopulateForAB() throws Exception {
-//TODO: Test goes here... 
-/* 
-try { 
-   Method method = GA_TSP.getClass().getMethod("copulate", Chromosome.class, Chromosome.class);
    method.setAccessible(true); 
    method.invoke(<Object>, <Parameters>); 
 } catch(NoSuchMethodException e) { 
