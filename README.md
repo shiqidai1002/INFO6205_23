@@ -135,6 +135,8 @@ Output is like this below:
 
 **Test Content**
 
+>For detailed content of each test method, please check code files
+
 - GA_TSPTest
     - `testCopulateForASSp1Sp2()`
     - `testEliminate()`
@@ -146,9 +148,11 @@ Output is like this below:
     - `testEquals()`
     - `testMutation()`
     
->For detailed content of each test method, please check code files
 
 **Screen Shots**
+
+>All the test cases have been passed.
+
 - GA_TSPTest
 
 ![](https://github.com/shiqidai1002/INFO6205_23/blob/master/img/GA_TSPTest.jpg)
