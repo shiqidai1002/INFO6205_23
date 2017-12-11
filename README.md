@@ -125,7 +125,8 @@ A user can also customize their own codintion by using the other two constructor
             - sort: according to ascending order
                 - `Collections.sort(population);`
             - cull by chance
-                - the closer to the end of sorting, the more likely to deadth 
+                - the closer to the end of sorting, the more likely to death.
+                You can check our original source code in ![**GA_TSP.java**](https://github.com/shiqidai1002/INFO6205_23/blob/master/src/geneticAlgorithms/GA_TSP.java) 
   
 
 
