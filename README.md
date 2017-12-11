@@ -48,6 +48,26 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
 
 - Index from 0 to `CITY_NUMBER - 1`, representing the order of salesman's visiting.
 
+- All genes will be randomly generated. The generator is like:    
+         
+        public Chromosome(int[][] map) {
+             MAP = map;  
+             Random random = new Random();  
+             gene = new int[CITY_NUMBER];  
+             for (int i = 1; i < CITY_NUMBER; i++) {  
+                 gene[i] = i;  
+             }  
+             int j;  
+             int t;  
+             for (int i = CITY_NUMBER - 1; i > 0; i--) {  
+                 j = random.nextInt(i) + 1;  
+                 t = gene[i];  
+                 gene[i] = gene[j];  
+                 gene[j] = t;  
+             }  
+             calDistance();  
+        
+        
 - The value of every gene's first index is 0, which means the salesman starts from city 0.  
     - It is represented as: 
      
@@ -55,7 +75,8 @@ The travelling salesman problem (TSP) asks the following question: "Given a list
         gene[i] = i;  
          }
           
-        i starts from 1, thus index 0 will automatically be 0.
+        i starts from 1, thus index 0 will automatically be 0.   
+
 
 **Gene expression**
 
