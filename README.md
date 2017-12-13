@@ -169,7 +169,7 @@ This certain generations are based on the `CITY_NUMBER` and the `MAX_POPULATION`
        MUTATION_POSSIBILITY = 0.1;  
        
     - Result: After 59th generation, the shortest distance has benn stable at 90469 till generation 400.
-    - Output file: ![Experiment 1]()
+    - Output file: ![Experiment 1](https://github.com/shiqidai1002/INFO6205_23/blob/master/outputFile/output1.txt)
 
 - Experiment 2
     - Conditions:
@@ -180,7 +180,7 @@ This certain generations are based on the `CITY_NUMBER` and the `MAX_POPULATION`
          MUTATION_POSSIBILITY = 0.1; 
          
     - Result: After 346th generation, the shortest distance has benn stable at 132968 till generation 600.
-    - Output file: ![Experiment 2]()
+    - Output file: ![Experiment 2](https://github.com/shiqidai1002/INFO6205_23/blob/master/outputFile/output2.txt)
     
 - Experiment 3
     - Conditions:
@@ -191,7 +191,7 @@ This certain generations are based on the `CITY_NUMBER` and the `MAX_POPULATION`
          MUTATION_POSSIBILITY = 0.2; 
          
     - Result: After 545th generation, the shortest distance has benn stable at 256458 till generation 600.
-    - Output file: ![Experiment 3]()
+    - Output file: ![Experiment 3](https://github.com/shiqidai1002/INFO6205_23/blob/master/outputFile/output3.txt)
 ### Unit Test ###
 
 **Tool Using**
