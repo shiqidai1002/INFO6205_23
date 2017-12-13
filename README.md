@@ -154,7 +154,7 @@ Output is like this below:
 
 ### Mian Program Success Evidence ###
 
-Our main program has been successively ran. It revealed that our genetic algorithm can actually achieve the optimum solution after certain generations.  
+Our main program has been successively run. It revealed that our genetic algorithm can actually achieve the optimum solution after certain generations.  
 
 This certain generations are based on the `CITY_NUMBER` and the `MAX_POPULATION`. The larger these variables are, the more generations we will need to obtain an optimum solution.
 
