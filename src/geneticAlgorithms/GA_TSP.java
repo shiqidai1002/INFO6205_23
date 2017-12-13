@@ -6,10 +6,10 @@ public class GA_TSP {
     public static final int MAX_DISTANCE = 30000;
     public static boolean DEFAULT = true;
 
-    public static int CITY_NUMBER = 20;
-    public static int MAX_GENERATION = 100;
+    public static int CITY_NUMBER = 80;
+    public static int MAX_GENERATION = 600;
     public static int MAX_POPULATION = 400;
-    public static double MUTATION_POSSIBILITY = 0.1;
+    public static double MUTATION_POSSIBILITY = 0.2;
 
     public int[][] map = new int[CITY_NUMBER][CITY_NUMBER];
     public ArrayList<Chromosome> population = new ArrayList<Chromosome>();

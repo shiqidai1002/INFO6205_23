@@ -152,7 +152,46 @@ Output is like this below:
     Generation #100: Shortest distance= 48693  current population size=400
     
 
+### Mian Program Success Evidence ###
 
+Our main program has been successively ran. It revealed that our genetic algorithm can actually achieve the optimum solution after certain generations.  
+
+This certain generations are based on the `CITY_NUMBER` and the `MAX_POPULATION`. The larger these variables are, the more generations we will need to obtain an optimum solution.
+
+**Detailed Evidence**
+
+- Experiment 1
+    -  Conditions:
+    
+          >CITY_NUMBER = 20;  
+       MAX_GENERATION = 400;  
+       MAX_POPULATION = 400;   
+       MUTATION_POSSIBILITY = 0.1;  
+       
+    - Result: After 59th generation, the shortest distance has benn stable at 90469 till generation 400.
+    - Output file: ![Experiment 1]()
+
+- Experiment 2
+    - Conditions:
+    
+        >CITY_NUMBER = 50;  
+         MAX_GENERATION = 600;  
+         MAX_POPULATION = 400;   
+         MUTATION_POSSIBILITY = 0.1; 
+         
+    - Result: After 346th generation, the shortest distance has benn stable at 132968 till generation 600.
+    - Output file: ![Experiment 2]()
+    
+- Experiment 3
+    - Conditions:
+    
+        >CITY_NUMBER = 80;  
+         MAX_GENERATION = 600;  
+         MAX_POPULATION = 400;   
+         MUTATION_POSSIBILITY = 0.2; 
+         
+    - Result: After 545th generation, the shortest distance has benn stable at 256458 till generation 600.
+    - Output file: ![Experiment 3]()
 ### Unit Test ###
 
 **Tool Using**
